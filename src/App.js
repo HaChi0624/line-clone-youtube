@@ -1,6 +1,8 @@
 import './App.css';
+import SignIn from './components/SignIn';
 
-function App() {
+
+const App = () => {
   return (
     <div>
       <SignIn />
