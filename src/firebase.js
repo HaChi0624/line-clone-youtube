@@ -3,7 +3,7 @@ import 'firebase/compat/auth'
 import 'firebase/compat/firestore'
 
 const firebaseApp = firebase.initializeApp({
-  piKey: "AIzaSyAdC7BeGSrf4XYcGJihpXc4uugX4eV3-ko",
+  apiKey: "AIzaSyAdC7BeGSrf4XYcGJihpXc4uugX4eV3-ko",
   authDomain: "line-clone-49fec.firebaseapp.com",
   projectId: "line-clone-49fec",
   storageBucket: "line-clone-49fec.appspot.com",
