@@ -3,17 +3,17 @@ import {db, auth} from '../firebase.js';
 import firebase from 'firebase/compat/app'
 
 const SendMessage = () => {
-  const [message, setMessage] = useState('');
+  const [messages, setMessages] = useState('');
   const sendMessage = (e) => {
     e.preventDefault();
     const {uid, photoURL} = auth.currentUser;
-    db.collection('message').add({
-      text:message,
+    db.collection('messages').add({
+      text:messages,
       photoURL,
       uid,
       createdAt: firebase.firestore.FieldValue.serverTimestamp()
     })
-    setMessage('');
+    setMessages('');
   }
 
   return (
@@ -23,8 +23,8 @@ const SendMessage = () => {
           <input 
             placeholder='メッセージを入力して下さい' 
             type='text' 
-            onChange={(e) => setMessage(e.target.value)} 
-            value={message}
+            onChange={(e) => setMessages(e.target.value)} 
+            value={messages}
           />
         </div>
       </form>
