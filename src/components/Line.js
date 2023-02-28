@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import SignOut from './SignOut'
-import {db} from '../firebase.js'
+import { db, auth } from '../firebase.js'
 import SendMessage from './SendMessage';
 
 const Line = () => {
@@ -21,7 +21,8 @@ const Line = () => {
       <div className='msgs'>
         {messages.map(({id, text, photoURL, uid}) => (
           <div>
-            <div key={id}>
+            <div key={id}
+            className={`msg ${uid === auth.currentUser.uid ? 'sent' : 'recieved'}`}>
               <img src={photoURL} alt='' />
               <p>{text}</p>
             </div>
